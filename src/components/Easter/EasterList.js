@@ -82,7 +82,7 @@ const easterlist = props => {
         })}
         {showTweet ? (
           <iframe
-            src="https://platform.twitter.com/widgets/tweet_button.html?size=l&url=https://margo-love.now.sh/&via=PierreAurele&related=twitterapi%2Ctwitter&text=I've found all the Easter Eggs ! Will you ?"
+            src="https://platform.twitter.com/widgets/tweet_button.html?size=l&url=https://react-love.now.sh/&via=PierreAurele&related=twitterapi%2Ctwitter&text=I've found all the Easter Eggs ! Will you ?"
             width="140"
             height="28"
             title="Twitter Tweet Button"
