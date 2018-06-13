@@ -69,7 +69,7 @@ class easterfab extends Component {
 
     return (
       <div>
-        {/* <AsyncEasterList easters={easters} visible={this.state.listVisible} /> */}
+        <AsyncEasterList easters={easters} visible={this.state.listVisible} />
         {content}
       </div>
     );
