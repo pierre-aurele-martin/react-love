@@ -23,9 +23,9 @@ Hosted on now.sh
 * serve: Deploy on now
 
 ## To do :
-Testing
-Find a way to activate keyboard keyCode on mobile
-Light the konami keys when clicking on them
-Add react-router for demonstration purpose
-Checking asyncHover for easters list
-More surprises...
++ Testing
++ Find a way to activate keyboard keyCode on mobile
++ Light the konami keys when clicking on them
++ Add react-router for demonstration purpose
++ Checking asyncHover for easters list
++ More surprises...
