@@ -8,9 +8,8 @@ import { withStyles, Grid } from '@material-ui/core';
 
 import ViewL from '../../hoc/ViewLoadable';
 
-import EasterFab from '../../components/Easter/EasterFab';
-
 import PageOne from '../Pages/PageOne';
+import EasterFab from '../../components/Easter/EasterFab';
 
 const AsyncPageTwo = ViewL({
   loader: () => import('../Pages/PageTwo')

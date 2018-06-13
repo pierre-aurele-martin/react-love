@@ -6,8 +6,12 @@ import PropTypes from 'prop-types';
 
 import { withStyles, Button, Badge } from '@material-ui/core';
 
-import EasterList from './EasterList';
+import AsyncL from '../../hoc/AsyncLoadable';
 import Emoji from '../Emoji/Emoji';
+
+const AsyncEasterList = AsyncL({
+  loader: () => import('./EasterList')
+});
 
 const styles = theme => ({
   button: {
@@ -34,21 +38,28 @@ class easterfab extends Component {
     this.props.resetAlert();
   };
 
-  render() {
-    const { classes, easters, eastersAlert} = this.props;
+  hoverFab() {
+    AsyncEasterList.preload();
+  }
 
-    let fab = <Button
-      variant="fab"
-      color="primary"
-      aria-label="easter egg"
-      className={classes.button}
-      onClick={this.toggleList}
-    >
-      <Emoji emoji="🥚" label="discover easter eggs" />
-    </Button>;
+  render() {
+    const { classes, easters, eastersAlert } = this.props;
+
+    let fab = (
+      <Button
+        variant="fab"
+        color="primary"
+        aria-label="easter egg"
+        className={classes.button}
+        onClick={this.toggleList}
+        onMouseOver={this.hoverFab}
+      >
+        <Emoji emoji="🥚" label="discover easter eggs" />
+      </Button>
+    );
 
     let content = fab;
-    if (eastersAlert.count > 0){
+    if (eastersAlert.count > 0) {
       content = (
         <Badge className={classes.badge} badgeContent={eastersAlert.count}>
           {fab}
@@ -58,7 +69,7 @@ class easterfab extends Component {
 
     return (
       <div>
-        <EasterList easters={easters} visible={this.state.listVisible} />
+        {/* <AsyncEasterList easters={easters} visible={this.state.listVisible} /> */}
         {content}
       </div>
     );
@@ -83,4 +94,7 @@ const mapStateToProps = state => {
   return { easters, eastersAlert };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(easterfab));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withStyles(styles)(easterfab));
