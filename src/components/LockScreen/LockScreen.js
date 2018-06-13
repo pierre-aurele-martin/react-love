@@ -1,14 +1,11 @@
+/* Could definetly split this one but find it interesting to have a  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Konami from 'react-konami';
 
+import LockArrowKeys from './LockArrowKeys';
+
 import { withStyles, Grid, Button, TextField } from '@material-ui/core';
-import {
-  KeyboardArrowUp,
-  KeyboardArrowDown,
-  KeyboardArrowLeft,
-  KeyboardArrowRight
-} from '@material-ui/icons';
 
 const styles = theme => ({
   root: {
@@ -50,17 +47,6 @@ const styles = theme => ({
     fontSize: '18px',
     border: '1px solid white',
     marginTop: '16px'
-  },
-  arrowButton: {
-    border: '1px solid white'
-  },
-  arrowButtonTransition: {
-    transition: 'background-color 0.15s ease',
-    backgroundColor: 'white'
-  },
-  arrowIcon: {
-    fontSize: '36px',
-    color: 'white'
   }
 });
 
@@ -104,7 +90,9 @@ class LockScreen extends Component {
   };
 
   handleBtn(code) {
-    this.handleInput(code);
+    console.log('handleBtn code ==> ' + code);
+    
+    //this.handleInput(code);
   }
 
   handleInput(code) {
@@ -168,60 +156,10 @@ class LockScreen extends Component {
               }}
             />
 
-            <Grid item xs={12} style={{ marginTop: '16px' }}>
-              <div style={{ margin: 'auto' }}>
-                <Button
-                  className={[
-                    classes.arrowButton,
-                    this.state.btnPressed.ArrowUp
-                      ? classes.arrowButtonTransition
-                      : null
-                  ].join(' ')}
-                  onClick={() => this.handleBtn('ArrowUp')}
-                >
-                  <KeyboardArrowUp className={classes.arrowIcon} />
-                </Button>
-              </div>
-              <div style={{ float: 'right', width: '33.33%' }}>
-                <Button
-                  className={[
-                    classes.arrowButton,
-                    this.state.btnPressed.ArrowRight
-                      ? classes.arrowButtonTransition
-                      : null
-                  ].join(' ')}
-                  onClick={() => this.handleBtn('ArrowRight')}
-                >
-                  <KeyboardArrowRight className={classes.arrowIcon} />
-                </Button>
-              </div>
-              <div style={{ float: 'right', width: '33.33%' }}>
-                <Button
-                  className={[
-                    classes.arrowButton,
-                    this.state.btnPressed.ArrowDown
-                      ? classes.arrowButtonTransition
-                      : null
-                  ].join(' ')}
-                  onClick={() => this.handleBtn('ArrowDown')}
-                >
-                  <KeyboardArrowDown className={classes.arrowIcon} />
-                </Button>
-              </div>
-              <div style={{ float: 'right', width: '33.33%' }}>
-                <Button
-                  className={[
-                    classes.arrowButton,
-                    this.state.btnPressed.ArrowLeft
-                      ? classes.arrowButtonTransition
-                      : null
-                  ].join(' ')}
-                  onClick={() => this.handleBtn('ArrowLeft')}
-                >
-                  <KeyboardArrowLeft className={classes.arrowIcon} />
-                </Button>
-              </div>
-            </Grid>
+            <LockArrowKeys 
+              /* handleBtn={this.handleBtn}  */
+              btnPressed={this.state.btnPressed}              
+            />
 
             <Button onClick={toggle} className={classes.lockButton} fullWidth>
               NOT FUN
