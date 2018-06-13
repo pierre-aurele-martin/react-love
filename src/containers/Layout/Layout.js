@@ -1,25 +1,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { validateEaster, incrementAlert } from '../../actions/easters';
-import { Element} from 'react-scroll'
+import { Element } from 'react-scroll';
 
 import PropTypes from 'prop-types';
 import { withStyles, Grid } from '@material-ui/core';
 
+import AsyncL from '../../hoc/Loadable';
+
 import PageOne from '../Pages/PageOne';
 import PageTwo from '../Pages/PageTwo';
 import PageThree from '../Pages/PageThree';
-import PageFour from '../Pages/PageFour';
-import PageFive from '../Pages/PageFive';
+/* import PageFour from '../Pages/PageFour'; */
+/* import PageFive from '../Pages/PageFive'; */
 
 import EasterFab from '../../components/Easter/EasterFab';
+
+/* const LoadablePageFour = Loadable({
+  loader: () => import('../Pages/PageFour'),
+  loading() {
+    return <div>Loading...</div>;
+  }
+}); */
+
+const AsyncPageFour = AsyncL({
+  loader: () => import('../Pages/PageFour')
+});
+
+const AsyncPageFive = AsyncL({
+  loader: () => import('../Pages/PageFive')
+});
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
     margin: '75px 0'
   },
-  element: {
+  element: {
     width: '100%'
   }
 });
@@ -47,19 +64,21 @@ class Layout extends Component {
       <div className={classes.root}>
         <Grid container spacing={24}>
           <Element name="pageone" className={classes.element}>
-            <PageOne/>
+            <PageOne />
           </Element>
           <Element name="pagetwo" className={classes.element}>
             <PageTwo />
           </Element>
           <Element name="pagethree" className={classes.element}>
-            <PageThree/>
+            <PageThree />
           </Element>
           <Element name="pagefour" className={classes.element}>
-            <PageFour />
+            {/* <PageFour /> */}
+            <AsyncPageFour />
           </Element>
           <Element name="pagefive" className={classes.element}>
-            <PageFive/>
+            {/* <PageFive /> */}
+            <AsyncPageFive />
           </Element>
         </Grid>
         <EasterFab />
@@ -87,6 +106,7 @@ const mapStateToProps = state => {
   return { easters };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  withStyles(styles)(Layout)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withStyles(styles)(Layout));
