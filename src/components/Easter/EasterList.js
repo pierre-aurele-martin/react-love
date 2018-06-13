@@ -50,7 +50,11 @@ const easterlist = props => {
     love: {
       name: 'Make it beat',
       emoji: <Emoji emoji="💓" label="easter egg description" />
-    }
+    }/* ,
+    allSplits: {
+      name: 'Load them all',
+      emoji: 
+    } */
   };
 
   let showTweet = true;
