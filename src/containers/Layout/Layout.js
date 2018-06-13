@@ -6,28 +6,25 @@ import { Element } from 'react-scroll';
 import PropTypes from 'prop-types';
 import { withStyles, Grid } from '@material-ui/core';
 
-import AsyncL from '../../hoc/Loadable';
-
-import PageOne from '../Pages/PageOne';
-import PageTwo from '../Pages/PageTwo';
-import PageThree from '../Pages/PageThree';
-/* import PageFour from '../Pages/PageFour'; */
-/* import PageFive from '../Pages/PageFive'; */
+import ViewL from '../../hoc/ViewLoadable';
 
 import EasterFab from '../../components/Easter/EasterFab';
 
-/* const LoadablePageFour = Loadable({
-  loader: () => import('../Pages/PageFour'),
-  loading() {
-    return <div>Loading...</div>;
-  }
-}); */
+import PageOne from '../Pages/PageOne';
 
-const AsyncPageFour = AsyncL({
+const AsyncPageTwo = ViewL({
+  loader: () => import('../Pages/PageTwo')
+});
+
+const AsyncPageThree = ViewL({
+  loader: () => import('../Pages/PageThree')
+});
+
+const AsyncPageFour = ViewL({
   loader: () => import('../Pages/PageFour')
 });
 
-const AsyncPageFive = AsyncL({
+const AsyncPageFive = ViewL({
   loader: () => import('../Pages/PageFive')
 });
 
@@ -67,17 +64,15 @@ class Layout extends Component {
             <PageOne />
           </Element>
           <Element name="pagetwo" className={classes.element}>
-            <PageTwo />
+            <AsyncPageTwo />
           </Element>
           <Element name="pagethree" className={classes.element}>
-            <PageThree />
+            <AsyncPageThree />
           </Element>
           <Element name="pagefour" className={classes.element}>
-            {/* <PageFour /> */}
             <AsyncPageFour />
           </Element>
           <Element name="pagefive" className={classes.element}>
-            {/* <PageFive /> */}
             <AsyncPageFive />
           </Element>
         </Grid>
