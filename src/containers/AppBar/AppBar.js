@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AsyncL from '../../hoc/AsyncLoadable';
 
-/* import LockScreen from '../../components/LockScreen/LockScreen'; */
-import Drawer from '../../components/Drawer/Drawer';
 import RingToCastle from '../../components/RingToCastle/RingToCastle';
 
 import { withStyles, AppBar, Toolbar, IconButton } from '@material-ui/core';
@@ -14,6 +12,11 @@ const styles = theme => ({
     marginLeft: -12,
     marginRight: 20
   }
+});
+
+/* I believe we could load that only when menu is clicked. With a state: doweneedrawer or something... */
+const AsyncDrawer = AsyncL({
+  loader: () => import('../../components/Drawer/Drawer')
 });
 
 const AsyncLockScreen = AsyncL({
@@ -53,7 +56,7 @@ class AppBarContainer extends Component {
     return (
       <React.Fragment>
         {lockscreen}
-        <Drawer
+        <AsyncDrawer
           toggle={() => this.toggleDrawer()}
           open={this.state.drawerOpen}
         />
