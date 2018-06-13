@@ -89,10 +89,8 @@ class LockScreen extends Component {
     e.preventDefault();
   };
 
-  handleBtn(code) {
-    console.log('handleBtn code ==> ' + code);
-    
-    //this.handleInput(code);
+  handleBtn = (code) => {
+    this.handleInput(code);
   }
 
   handleInput(code) {
@@ -157,7 +155,7 @@ class LockScreen extends Component {
             />
 
             <LockArrowKeys 
-              /* handleBtn={this.handleBtn}  */
+              handleBtn={this.handleBtn}
               btnPressed={this.state.btnPressed}              
             />
 
