@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import AsyncL from '../../hoc/AsyncLoadable';
 
-import LockScreen from '../../components/LockScreen/LockScreen';
+/* import LockScreen from '../../components/LockScreen/LockScreen'; */
 import Drawer from '../../components/Drawer/Drawer';
 import RingToCastle from '../../components/RingToCastle/RingToCastle';
 
@@ -13,6 +14,10 @@ const styles = theme => ({
     marginLeft: -12,
     marginRight: 20
   }
+});
+
+const AsyncLockScreen = AsyncL({
+  loader: () => import('../../components/LockScreen/LockScreen')
 });
 
 class AppBarContainer extends Component {
@@ -29,11 +34,15 @@ class AppBarContainer extends Component {
     this.setState({ locked: !this.state.locked });
   }
 
+  mouseOverLock() {
+    AsyncLockScreen.preload();
+  }
+
   render() {
     const { classes } = this.props;
 
     const lockscreen = this.state.locked ? (
-      <LockScreen
+      <AsyncLockScreen
         visible={this.state.locked}
         toggle={() => this.toggleLockScreen()}
       />
@@ -59,13 +68,14 @@ class AppBarContainer extends Component {
               <Menu />
             </IconButton>
             <RingToCastle />
-              <IconButton
-                color="inherit"
-                aria-label="Lock"
-                onClick={() => this.toggleLockScreen()}
-              >
-                {this.state.locked ? <Lock /> : <LockOpen />}
-              </IconButton>
+            <IconButton
+              color="inherit"
+              aria-label="Lock"
+              onClick={() => this.toggleLockScreen()}
+              onMouseOver={this.mouseOverLock}
+            >
+              {this.state.locked ? <Lock /> : <LockOpen />}
+            </IconButton>
           </Toolbar>
         </AppBar>
       </React.Fragment>
