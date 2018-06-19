@@ -170,7 +170,8 @@ class LockScreen extends Component {
 }
 
 LockScreen.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  toggle: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(LockScreen);

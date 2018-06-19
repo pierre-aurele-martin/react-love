@@ -20,17 +20,17 @@ const styles = theme => ({
 });
 
 const DrawerContainer = props => {
-  const { classes } = props;
+  const { classes, toggle, open } = props;
 
   Events.scrollEvent.register('end', function(to, element) {
-    props.toggle();
+    toggle();
   });
 
   return (
     <SwipeableDrawer
-      open={props.open}
-      onClose={props.toggle}
-      onOpen={props.toggle}
+      open={open}
+      onClose={toggle}
+      onOpen={toggle}
     >
       <div className={classes.listParent}>
         <List component="nav">
@@ -101,7 +101,9 @@ const DrawerContainer = props => {
 };
 
 DrawerContainer.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired, 
+  toggle: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired
 };
 
 export default withStyles(styles)(DrawerContainer);

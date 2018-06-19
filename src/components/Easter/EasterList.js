@@ -102,7 +102,9 @@ const easterlist = props => {
 };
 
 easterlist.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  visible: PropTypes.bool.isRequired,
+  easters: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(easterlist);

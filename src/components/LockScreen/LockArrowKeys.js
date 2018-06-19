@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { withStyles, Grid, Button } from '@material-ui/core';
 import {
   KeyboardArrowUp,
@@ -22,7 +24,7 @@ const styles = theme => ({
 });
 
 const LockArrowKeys = props => {
-  const { classes, btnPressed } = props;
+  const { classes, btnPressed, handleBtn } = props;
 
   return (
     <Grid item xs={12} style={{ marginTop: '1rem' }}>
@@ -32,7 +34,7 @@ const LockArrowKeys = props => {
             classes.arrowButton,
             btnPressed.ArrowUp ? classes.arrowButtonTransition : null
           ].join(' ')}
-          onClick={() => props.handleBtn('ArrowUp')}
+          onClick={() => handleBtn('ArrowUp')}
         >
           <KeyboardArrowUp className={classes.arrowIcon} />
         </Button>
@@ -43,7 +45,7 @@ const LockArrowKeys = props => {
             classes.arrowButton,
             btnPressed.ArrowRight ? classes.arrowButtonTransition : null
           ].join(' ')}
-          onClick={() => props.handleBtn('ArrowRight')}
+          onClick={() => handleBtn('ArrowRight')}
         >
           <KeyboardArrowRight className={classes.arrowIcon} />
         </Button>
@@ -54,7 +56,7 @@ const LockArrowKeys = props => {
             classes.arrowButton,
             btnPressed.ArrowDown ? classes.arrowButtonTransition : null
           ].join(' ')}
-          onClick={() => props.handleBtn('ArrowDown')}
+          onClick={() => handleBtn('ArrowDown')}
         >
           <KeyboardArrowDown className={classes.arrowIcon} />
         </Button>
@@ -65,13 +67,19 @@ const LockArrowKeys = props => {
             classes.arrowButton,
             btnPressed.ArrowLeft ? classes.arrowButtonTransition : null
           ].join(' ')}
-          onClick={() => props.handleBtn('ArrowLeft')}
+          onClick={() => handleBtn('ArrowLeft')}
         >
           <KeyboardArrowLeft className={classes.arrowIcon} />
         </Button>
       </div>
     </Grid>
   );
+};
+
+LockArrowKeys.propTypes = {
+  classes: PropTypes.object.isRequired,
+  btnPressed: PropTypes.object.isRequired,
+  handleBtn: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(LockArrowKeys);
