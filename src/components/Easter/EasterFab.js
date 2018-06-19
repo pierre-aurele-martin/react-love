@@ -17,14 +17,14 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
     position: 'fixed',
-    bottom: '36px',
-    right: '36px'
+    bottom: '2rem',
+    right: '2rem'
   },
   badge: {
     margin: theme.spacing.unit * 2,
     position: 'fixed',
-    bottom: '80px',
-    right: '30px'
+    bottom: '5rem',
+    right: '2rem'
   }
 });
 

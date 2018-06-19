@@ -25,9 +25,9 @@ const styles = theme => ({
   lockInput: {
     backgroundColor: 'white',
     border: '1px solid white',
-    fontSize: 16,
-    padding: '10px 12px',
-    width: 'calc(100% - 24px)',
+    fontSize: '1rem',
+    padding: '0.75rem',
+    width: 'calc(100% - 1.5rem)',
     transition: theme.transitions.create(['border-color', 'box-shadow']),
     '&:focus': {
       borderColor: 'white',
@@ -35,8 +35,8 @@ const styles = theme => ({
     }
   },
   lockFormLabel: {
-    top: '-18px',
-    fontSize: 36,
+    top: '-1rem',
+    fontSize: '2rem',
     color: 'white',
     '&:focus': {
       color: 'white'
@@ -44,9 +44,9 @@ const styles = theme => ({
   },
   lockButton: {
     color: 'white',
-    fontSize: '18px',
+    fontSize: '1rem',
     border: '1px solid white',
-    marginTop: '16px'
+    marginTop: '1rem'
   }
 });
 

@@ -16,11 +16,11 @@ import Emoji from '../Emoji/Emoji';
 const styles = theme => ({
   root: {
     width: '100%',
-    maxWidth: 250,
+    maxWidth: '15.5rem',
     backgroundColor: theme.palette.primary.main,
     position: 'fixed',
-    bottom: '115px',
-    right: '50px'
+    bottom: '7rem',
+    right: '3rem'
   },
   listText: {
     color: 'white'

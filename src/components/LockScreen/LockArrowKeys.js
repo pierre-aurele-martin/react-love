@@ -16,7 +16,7 @@ const styles = theme => ({
     backgroundColor: 'white'
   },
   arrowIcon: {
-    fontSize: '36px',
+    fontSize: '2.5rem',
     color: 'white'
   }
 });
@@ -25,7 +25,7 @@ const LockArrowKeys = props => {
   const { classes, btnPressed } = props;
 
   return (
-    <Grid item xs={12} style={{ marginTop: '16px' }}>
+    <Grid item xs={12} style={{ marginTop: '1rem' }}>
       <div style={{ margin: 'auto' }}>
         <Button
           className={[

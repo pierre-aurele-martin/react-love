@@ -29,21 +29,21 @@ const RingToCastle = props => {
       <Emoji
         styles={{
           position: 'absolute',
-          bottom: '-15px',
+          bottom: '-1rem',
           left: validEaster + '%'
         }}
         emoji="💃🏻"
-        fontSize="25px"
+        fontSize="1.5rem"
         label="dancer girl"
       />
       <Emoji
         styles={{
           position: 'absolute',
-          bottom: '-15px',
+          bottom: '-1rem',
           right: validEaster + '%'
         }}
         emoji="🕺🏻"
-        fontSize="25px"
+        fontSize="1.5rem"
         label="dancer man"
       />
     </div>

@@ -13,11 +13,11 @@ const styles = theme => ({
   root: {
     width: '100%',
     backgroundColor: theme.palette.primary.main,
-    padding: '40px 0'
+    padding: '2.5rem 0'
   },
   grid: {
     margin: '0 auto',
-    padding: '12px 24px'
+    padding: '1rem 1.5rem'
   }
 });
 

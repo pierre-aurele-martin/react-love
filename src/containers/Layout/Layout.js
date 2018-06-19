@@ -30,7 +30,7 @@ const AsyncPageFive = ViewL({
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    margin: '75px 0'
+    margin: '5rem 0'
   },
   element: {
     width: '100%'

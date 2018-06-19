@@ -9,12 +9,12 @@ import Emoji from '../../components/Emoji/Emoji';
 const styles = theme => ({
   grid: {
     margin: '0 auto',
-    padding: '0 24px'
+    padding: '0 1.5rem'
   },
   iFrameContainer: {
     position: 'relative',
     height: 315,
-    margin: '15px 0'
+    margin: '1rem 0'
   },
   iFrame: {
     position: 'absolute',
@@ -24,7 +24,7 @@ const styles = theme => ({
     height: '100%'
   },
   emoji: {
-    fontSize: 50
+    fontSize: '3rem'
   }
 });
 

@@ -9,8 +9,8 @@ import { Menu, Lock, LockOpen } from '@material-ui/icons';
 
 const styles = theme => ({
   menuButton: {
-    marginLeft: -12,
-    marginRight: 20
+    marginLeft: '-1rem',
+    marginRight: '1rem'
   }
 });
 

@@ -12,10 +12,10 @@ import heartbeatsImg from '../../assets/imgs/heartbeatAnimation.gif';
 const styles = theme => ({
   grid: {
     margin: '0 auto',
-    padding: '40px 24px'
+    padding: '2.5rem 1.5rem'
   },
   contactBtn: {
-    margin: '15px'
+    margin: '1rem'
   },
   rightIcon: {
     marginLeft: theme.spacing.unit

@@ -7,7 +7,7 @@ import image from '../../assets/imgs/PageFour.jpg';
 const styles = theme => ({
   grid: {
     margin: '0 auto',
-    padding: '40px 0px'
+    padding: '2.5rem 0'
   },
   img: {
     width: '100%',
@@ -31,7 +31,7 @@ const PageFour = props => {
         <Typography
           variant="display3"
           align="left"
-          style={{ paddingLeft: '24px' }}
+          style={{ paddingLeft: '1.5rem' }}
         >
           {'03 - ME WITH 🍷 = <3'}
         </Typography>

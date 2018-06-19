@@ -18,21 +18,21 @@ const theme = createMuiTheme({
     display4: {
       fontFamily: 'FreightText, Georgia, Times New Roman, Times, serif',
       fontWeight: 'normal',
-      fontSize: /* '4.6rem' */50,
+      fontSize: '3rem',
       lineHeight: 1.12,
       color: '#1f1f1f'
     },
     display3: {
       fontFamily: 'FreightText, Georgia, Times New Roman, Times, serif',
       fontWeight: 'normal',
-      fontSize: 30,
+      fontSize: '2rem',
       color: '#1f1f1f'
     },
     headline: {
       color: 'rgba(0, 0, 0, 0.54)'
     },
     body1: {
-      fontSize: 16,
+      fontSize: '1rem',
       fontStyle: 'italic',
       color: '#1f1f1f',
     }

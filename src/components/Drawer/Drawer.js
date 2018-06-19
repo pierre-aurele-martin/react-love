@@ -13,9 +13,9 @@ import {
 const styles = theme => ({
   listParent: {
     width: '100%',
-    maxWidth: 360,
+    maxWidth: '22rem',
     backgroundColor: theme.palette.background.paper,
-    padding: '0 15px'
+    padding: '0 1rem'
   }
 });
 
